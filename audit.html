@@ -24,19 +24,17 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .page-title span{color:var(--green);}
 .page-sub{font-size:.78rem;color:var(--muted);margin-top:.4rem;}
 
-/* ── WRAPPER ── */
-.wrap{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+/* ── WRAP ── */
+.wrap{max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
 
 /* ── BANNER ── */
 .banner{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 55%,#00a84f 100%);padding:1.6rem 2rem;display:flex;align-items:center;gap:1.4rem;position:relative;overflow:hidden;}
 .banner::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-50deg,transparent,transparent 18px,rgba(0,0,0,.07) 18px,rgba(0,0,0,.07) 19px);}
 .avatar{width:68px;height:68px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--green-dark);flex-shrink:0;border:3px solid rgba(255,255,255,.25);position:relative;z-index:1;}
 .player-info{position:relative;z-index:1;flex:1;}
-.player-name{font-family:'Barlow Condensed',sans-serif;font-size:1.85rem;font-weight:900;color:#fff;line-height:1;letter-spacing:.01em;}
+.player-name{font-family:'Barlow Condensed',sans-serif;font-size:1.85rem;font-weight:900;color:#fff;line-height:1;}
 .player-meta{font-size:.75rem;color:rgba(255,255,255,.75);margin-top:.35rem;display:flex;gap:.9rem;flex-wrap:wrap;}
-.player-meta span{display:flex;align-items:center;gap:.25rem;}
 .banner-right{position:relative;z-index:1;text-align:right;flex-shrink:0;}
-.gpa-block{display:flex;flex-direction:column;align-items:flex-end;}
 .gpa-num{font-family:'Barlow Condensed',sans-serif;font-size:3.2rem;font-weight:900;color:var(--gold);line-height:1;}
 .gpa-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);}
 .status-pill{margin-top:.4rem;background:rgba(52,199,123,.2);border:1px solid var(--safe);color:var(--safe);font-size:.65rem;font-weight:600;letter-spacing:.1em;padding:.2rem .6rem;border-radius:99px;text-transform:uppercase;}
@@ -46,63 +44,65 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.55rem;}
 .progress-title{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);}
 .progress-fraction{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;}
-.progress-fraction em{color:var(--muted);font-style:normal;font-size:.85rem;}
 .track{height:16px;background:rgba(255,255,255,.05);border-radius:99px;overflow:hidden;display:flex;gap:2px;}
 .fill-earned{height:100%;background:linear-gradient(90deg,var(--green-dark),var(--green));border-radius:99px 0 0 99px;}
 .fill-ip{height:100%;background:linear-gradient(90deg,#2563eb,var(--ip));}
 .progress-legend{display:flex;gap:1.2rem;margin-top:.55rem;flex-wrap:wrap;}
 .leg{display:flex;align-items:center;gap:.35rem;font-size:.7rem;color:var(--muted);}
-.leg-dot{width:10px;height:10px;border-radius:2px;background:var(--c,var(--green));}
-.leg-pct{font-weight:600;color:var(--text);margin-left:.1rem;}
+.leg-dot{width:10px;height:10px;border-radius:2px;}
 
 /* ── STAT GRID ── */
 .stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);}
-.stat{background:var(--card);padding:1rem 1.2rem;transition:background .15s;}
+.stat{background:var(--card);padding:1rem 1.2rem;transition:background .15s;cursor:default;}
 .stat:hover{background:var(--card2);}
 .sv{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;line-height:1;color:#fff;}
 .sv.g{color:var(--safe);}
 .sv.gold{color:var(--gold);}
 .sv.ip{color:var(--ip);}
-.sv.r{color:var(--danger);}
 .sk{font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:.25rem;}
 .ss{font-size:.65rem;color:var(--muted2);margin-top:.1rem;}
 
 /* ── TWO COL ── */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
-
-/* ── SECTION ── */
 .section{background:var(--card);padding:1.3rem 1.5rem;}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--border);}
 
-/* ── REQUIREMENT ROWS ── */
-.req{display:flex;align-items:center;gap:.7rem;padding:.45rem 0;border-bottom:1px solid var(--border);cursor:pointer;}
+/* ── REQUIREMENTS ── */
+.req{display:flex;align-items:center;gap:.7rem;padding:.45rem 0;border-bottom:1px solid var(--border);}
 .req:last-child{border-bottom:none;}
-.req:hover .req-name{color:var(--gold);}
 .req-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;flex-shrink:0;font-weight:700;}
 .ri-done{background:var(--safe);color:#000;}
 .ri-ip{background:var(--ip);color:#000;}
-.ri-part{background:var(--gold);color:#000;}
-.ri-todo{background:var(--border2);color:var(--muted);}
 .req-name{flex:1;font-size:.8rem;color:var(--text);}
-.req-cr{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;color:var(--muted);}
+.req-cr{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;}
 .req-cr.done{color:var(--safe);}
 .req-cr.ip{color:var(--ip);}
-.req-cr.part{color:var(--gold);}
 
-/* ── TRANSFER TABLE ── */
-.xfer-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;}
+/* ── COURSES GRID ── */
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;}
+.course-card{background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.55rem .75rem;cursor:pointer;transition:all .15s;}
+.course-card:hover{background:rgba(52,199,123,.14);border-color:var(--safe);transform:translateY(-1px);}
+.course-card.ip-card{background:rgba(96,165,250,.07);border-color:rgba(96,165,250,.25);}
+.course-card.ip-card:hover{background:rgba(96,165,250,.15);}
+.cc-code{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;color:var(--safe);}
+.course-card.ip-card .cc-code{color:var(--ip);}
+.cc-name{font-size:.73rem;color:var(--text);margin-top:.1rem;line-height:1.3;}
+.cc-meta{font-size:.65rem;color:var(--muted);margin-top:.2rem;display:flex;gap:.4rem;}
+
+/* ── TRANSFER ── */
+.xfer-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--border);}
 .xfer-row:last-child{border-bottom:none;}
-.xfer-school{color:var(--text);}
+.xfer-school{font-size:.8rem;color:var(--text);}
 .xfer-detail{font-size:.67rem;color:var(--muted);margin-top:.1rem;}
 .xfer-cr{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
 
-/* ── COURSES IN PROGRESS ── */
-.ip-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
-.ip-card{background:rgba(96,165,250,.07);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:.65rem .8rem;}
-.ip-code{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;letter-spacing:.1em;color:var(--ip);font-weight:700;}
-.ip-name{font-size:.75rem;color:var(--text);margin-top:.1rem;}
-.ip-cr{font-size:.65rem;color:var(--muted);margin-top:.15rem;}
+/* ── GPA CHART ── */
+.gpa-bars{display:flex;align-items:flex-end;gap:.5rem;height:80px;margin-top:.5rem;}
+.gpa-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:.3rem;}
+.gpa-bar{width:100%;background:var(--green);border-radius:3px 3px 0 0;transition:height .5s ease;min-height:4px;}
+.gpa-bar-label{font-size:.58rem;color:var(--muted);text-align:center;line-height:1.2;}
+.gpa-bar-val{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;color:var(--gold);}
 
 /* ── TIMELINE ── */
 .timeline{background:var(--card);padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
@@ -111,576 +111,400 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .pill{padding:.28rem .7rem;border-radius:99px;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;border:1px solid var(--border2);color:var(--muted2);}
 .pill.done-yr{border-color:var(--green);color:var(--green);background:rgba(0,133,62,.08);}
 .pill.active-yr{background:var(--green);border-color:var(--green);color:#fff;}
-.pill.ip-yr{border-color:var(--ip);color:var(--ip);}
 .pill.target-yr{border-color:var(--gold);color:var(--gold);}
-.grad-badge{margin-left:auto;flex-shrink:0;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#000;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;padding:.4rem 1rem;border-radius:8px;letter-spacing:.05em;}
+.grad-badge{margin-left:auto;flex-shrink:0;background:linear-gradient(135deg,var(--gold-dim),var(--gold));color:#000;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;padding:.4rem 1rem;border-radius:8px;}
 
-/* ── AI CHAT ── */
+/* ── AI SECTION ── */
 .ai-section{background:var(--card);padding:1.5rem 2rem;}
 .ai-header{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;}
-.ai-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#4f46e5);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.ai-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;}
+.ai-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#7c3aed,#4f46e5);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.ai-title{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;}
 .ai-sub{font-size:.72rem;color:var(--muted);}
-.chat-box{background:var(--bg);border:1px solid var(--border2);border-radius:10px;min-height:180px;max-height:340px;overflow-y:auto;padding:1rem;margin-bottom:.75rem;display:flex;flex-direction:column;gap:.75rem;}
+.quick-btns{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.85rem;}
+.qbtn{background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:99px;padding:.28rem .75rem;font-size:.7rem;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.qbtn:hover{border-color:var(--green);color:var(--green);}
+.chat-box{background:var(--bg);border:1px solid var(--border2);border-radius:10px;min-height:200px;max-height:380px;overflow-y:auto;padding:1rem;margin-bottom:.75rem;display:flex;flex-direction:column;gap:.75rem;}
 .msg{display:flex;gap:.6rem;align-items:flex-start;}
-.msg-avatar{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;font-weight:700;}
-.msg-avatar.user{background:var(--green);color:#fff;}
-.msg-avatar.ai{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;}
-.msg-bubble{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;font-size:.8rem;line-height:1.55;color:var(--text);max-width:calc(100% - 36px);}
-.msg.user .msg-bubble{background:rgba(0,133,62,.12);border-color:rgba(0,133,62,.25);}
+.msg-av{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0;font-weight:700;}
+.msg-av.user{background:var(--green);color:#fff;}
+.msg-av.ai{background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;}
+.msg-bubble{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.6rem .8rem;font-size:.8rem;line-height:1.6;color:var(--text);max-width:calc(100% - 38px);}
+.msg.user .msg-bubble{background:rgba(0,133,62,.1);border-color:rgba(0,133,62,.2);}
+.msg-bubble strong{color:var(--gold);}
+.msg-bubble ul{padding-left:1rem;margin:.3rem 0;}
+.msg-bubble li{margin:.2rem 0;}
 .ai-input-row{display:flex;gap:.6rem;}
-.ai-input{flex:1;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:.6rem .9rem;color:var(--text);font-size:.82rem;font-family:'Inter',sans-serif;outline:none;}
+.ai-input{flex:1;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:.65rem .9rem;color:var(--text);font-size:.82rem;font-family:'Inter',sans-serif;outline:none;}
 .ai-input:focus{border-color:var(--green);}
 .ai-input::placeholder{color:var(--muted2);}
-.ai-send{background:var(--green);color:#fff;border:none;border-radius:8px;padding:.6rem 1.1rem;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;letter-spacing:.04em;flex-shrink:0;}
+.ai-send{background:var(--green);color:#fff;border:none;border-radius:8px;padding:.65rem 1.2rem;font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;letter-spacing:.04em;}
 .ai-send:hover{background:var(--green-mid);}
 .ai-send:disabled{background:var(--muted2);cursor:not-allowed;}
-.quick-btns{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem;}
-.qbtn{background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:99px;padding:.25rem .7rem;font-size:.7rem;cursor:pointer;font-family:'Inter',sans-serif;}
-.qbtn:hover{border-color:var(--green);color:var(--green);}
-.typing{display:flex;gap:4px;align-items:center;padding:.5rem 0;}
-.typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:bounce .9s infinite;}
+.typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;display:inline-block;animation:bounce .9s infinite;margin:0 2px;}
 .typing span:nth-child(2){animation-delay:.15s;}
 .typing span:nth-child(3){animation-delay:.3s;}
 @keyframes bounce{0%,80%,100%{transform:translateY(0);}40%{transform:translateY(-5px);}}
 
-/* ── RESPONSIVE ── */
+/* ── COURSE DETAIL MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal{background:var(--card);border:1px solid var(--border2);border-radius:12px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;}
+.modal-header{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;border-radius:12px 12px 0 0;}
+.modal-header h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;}
+.modal-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;}
+.modal-body{padding:1.25rem;}
+.modal-ai-response{font-size:.82rem;line-height:1.65;color:var(--text);}
+.modal-ai-response strong{color:var(--gold);}
+
 @media(max-width:640px){
   .stat-grid{grid-template-columns:repeat(3,1fr);}
   .two-col{grid-template-columns:1fr;}
   .banner-right{display:none;}
-  .ip-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
+<!-- Load data files -->
+ <script src="config.js"></script>
+<script src="data/my-audit.js"></script>
+<script src="data/unt-courses.js"></script>
+<script src="app.js"></script>
+
 <div class="page-header">
   <div class="page-eyebrow">University of North Texas · Denton</div>
   <div class="page-title">Degree <span>Audit</span> Card</div>
-  <div class="page-sub">B.S. Computer Science · College of Engineering · Catalog Year Fall 2025</div>
+  <div class="page-sub" id="pageSubtitle">Loading your audit...</div>
 </div>
 
 <div class="wrap">
 
   <!-- BANNER -->
   <div class="banner">
-    <div class="avatar">AT</div>
+    <div class="avatar" id="avatarInitials">AT</div>
     <div class="player-info">
-      <div class="player-name">Aashish Thapa Magar</div>
-      <div class="player-meta">
-        <span>🎓 B.S. Computer Science</span>
-        <span>🏫 UNT Denton · ENBS CSCI</span>
-        <span>🆔 11922278</span>
-        <span>📅 Catalog valid through Aug 2033</span>
-      </div>
+      <div class="player-name" id="studentName">Aashish Thapa Magar</div>
+      <div class="player-meta" id="studentMeta"></div>
     </div>
     <div class="banner-right">
-      <div class="gpa-block">
-        <div class="gpa-num">3.67</div>
-        <div class="gpa-label">UNT GPA</div>
-      </div>
+      <div class="gpa-num" id="untGPA">3.67</div>
+      <div class="gpa-label">UNT GPA</div>
       <div class="status-pill">✓ All Reqs Satisfied (IP)</div>
     </div>
   </div>
 
-  <!-- PROGRESS BAR -->
+  <!-- PROGRESS -->
   <div class="progress-section">
     <div class="progress-header">
       <span class="progress-title">Degree Completion</span>
-      <span class="progress-fraction">119 earned + <span style="color:var(--ip)">15 IP</span> <em>/ 120 required</em></span>
+      <span class="progress-fraction" id="progressFraction"></span>
     </div>
     <div class="track">
-      <!-- Earned: 119/134 = ~89% -->
-      <div class="fill-earned" style="width:88.8%"></div>
-      <!-- IP: 15/134 = ~11% -->
-      <div class="fill-ip" style="width:11.2%"></div>
+      <div class="fill-earned" id="fillEarned"></div>
+      <div class="fill-ip" id="fillIP"></div>
     </div>
     <div class="progress-legend">
-      <div class="leg"><div class="leg-dot" style="--c:var(--green)"></div>Earned <span class="leg-pct">119 cr</span></div>
-      <div class="leg"><div class="leg-dot" style="--c:var(--ip)"></div>In Progress <span class="leg-pct">15 cr</span></div>
-      <div class="leg"><div class="leg-dot" style="--c:rgba(255,255,255,.08)"></div>Remaining <span class="leg-pct">~1 cr</span></div>
+      <div class="leg"><div class="leg-dot" style="background:var(--green)"></div>Earned <strong id="legEarned" style="color:var(--text);margin-left:.2rem"></strong></div>
+      <div class="leg"><div class="leg-dot" style="background:var(--ip)"></div>In Progress <strong id="legIP" style="color:var(--text);margin-left:.2rem"></strong></div>
+      <div class="leg"><div class="leg-dot" style="background:rgba(255,255,255,.08)"></div>Required <strong id="legRequired" style="color:var(--text);margin-left:.2rem"></strong></div>
     </div>
   </div>
 
   <!-- STAT GRID -->
-  <div class="stat-grid">
-    <div class="stat">
-      <div class="sv">120</div>
-      <div class="sk">Credits Required</div>
-    </div>
-    <div class="stat">
-      <div class="sv g">119</div>
-      <div class="sk">Credits Earned</div>
-      <div class="ss">Completed</div>
-    </div>
-    <div class="stat">
-      <div class="sv ip">15</div>
-      <div class="sk">In Progress</div>
-      <div class="ss">Current semester</div>
-    </div>
-    <div class="stat">
-      <div class="sv gold">3.26</div>
-      <div class="sk">Overall GPA</div>
-      <div class="ss">All courses incl. transfer</div>
-    </div>
-    <div class="stat">
-      <div class="sv g">99%</div>
-      <div class="sk">Complete</div>
-      <div class="ss">On track to graduate</div>
-    </div>
-  </div>
+  <div class="stat-grid" id="statGrid"></div>
 
-  <!-- TWO COL: Requirements + Transfer -->
+  <!-- TWO COL -->
   <div class="two-col">
 
     <!-- Requirements -->
     <div class="section">
       <div class="sec-title">Degree Requirements</div>
-
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Communication</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Mathematics</div>
-        <div class="req-cr done">4/3</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Life & Physical Sciences</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Creative Arts</div>
-        <div class="req-cr done">3/3</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Language, Philosophy & Culture</div>
-        <div class="req-cr done">3/3</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — American History</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Government/Political Science</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">University Core — Social & Behavioral Science</div>
-        <div class="req-cr done">3/3</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Core Option Courses</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">CS Required Math (Calc I, II, Prob, Lin Alg)</div>
-        <div class="req-cr done">14/14</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">CS Required Lab Science (Physics I+II)</div>
-        <div class="req-cr done">8/8</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Technical Writing</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Digital Logic Design (EENG2710)</div>
-        <div class="req-cr ip">3 — IP</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-ip">⏳</div>
-        <div class="req-name">Major in CS — 58 Hours (16 sub-reqs)</div>
-        <div class="req-cr ip">~IP</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Software Dev Capstone I &amp; II</div>
-        <div class="req-cr done">6/6</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Major Residency Requirement (12 hrs at UNT)</div>
-        <div class="req-cr done">12/12</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Elective Hours</div>
-        <div class="req-cr done">✓</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Advanced Hours — Overall (42 hrs)</div>
-        <div class="req-cr done">42/42</div>
-      </div>
-      <div class="req">
-        <div class="req-icon ri-done">✓</div>
-        <div class="req-name">Advanced Hours — UNT Residency (24 hrs)</div>
-        <div class="req-cr done">27/24</div>
-      </div>
+      <div id="requirementsList"></div>
     </div>
 
-    <!-- Transfer + Courses IP -->
+    <!-- Right col -->
     <div style="display:flex;flex-direction:column;gap:1px;background:var(--border);">
 
+      <!-- Transfer -->
       <div class="section">
         <div class="sec-title">Transfer Credits</div>
-        <div class="xfer-row">
-          <div>
-            <div class="xfer-school">Dallas College (DC)</div>
-            <div class="xfer-detail">Calculus I &amp; II, Composition I &amp; II, History I &amp; II, Physics I &amp; II, Govt, Discrete Math, Programming Fundamentals I &amp; II, etc.</div>
-          </div>
-          <div class="xfer-cr">~75 cr</div>
-        </div>
-        <div class="xfer-row">
-          <div>
-            <div class="xfer-school">Arlington (UT-ARLNG)</div>
-            <div class="xfer-detail">Data Structures, Assembly Lang, Software Engr, Lin Alg, Algorithms, Theoretical CS, Engineering Probability</div>
-          </div>
-          <div class="xfer-cr">~28 cr</div>
-        </div>
-        <div class="xfer-row">
-          <div>
-            <div class="xfer-school">Other / AR State (AR ST U)</div>
-            <div class="xfer-detail">Composition I, Philosophy, Fine Arts, Oral Comm</div>
-          </div>
-          <div class="xfer-cr">~12 cr</div>
-        </div>
-        <div style="margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;">
-          <span style="font-size:.75rem;color:var(--muted);">Total overall attempted (incl. transfer)</span>
-          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--gold);">122 cr</span>
-        </div>
+        <div id="transferList"></div>
       </div>
 
+      <!-- GPA Chart -->
       <div class="section">
-        <div class="sec-title">Courses In Progress (Spring 2026)</div>
-        <div class="ip-grid">
-          <div class="ip-card">
-            <div class="ip-code">CSCE3420</div>
-            <div class="ip-name">Internet Programming</div>
-            <div class="ip-cr">3 cr · EN</div>
-          </div>
-          <div class="ip-card">
-            <div class="ip-code">CSCE4110</div>
-            <div class="ip-name">Algorithms</div>
-            <div class="ip-cr">3 cr · EN</div>
-          </div>
-          <div class="ip-card">
-            <div class="ip-code">CSCE4201</div>
-            <div class="ip-name">Intro to AI</div>
-            <div class="ip-cr">3 cr · EN</div>
-          </div>
-          <div class="ip-card">
-            <div class="ip-code">CSCE4380</div>
-            <div class="ip-name">Data Mining</div>
-            <div class="ip-cr">3 cr · EN</div>
-          </div>
-          <div class="ip-card">
-            <div class="ip-code">EENG2710</div>
-            <div class="ip-name">Logic Design</div>
-            <div class="ip-cr">3 cr · EN</div>
-          </div>
-        </div>
+        <div class="sec-title">GPA by Academic Year</div>
+        <div class="gpa-bars" id="gpaChart"></div>
       </div>
 
     </div>
   </div>
 
-  <!-- COMPLETED COURSES HIGHLIGHT -->
+  <!-- COMPLETED COURSES -->
   <div class="section" style="background:var(--card);">
-    <div class="sec-title">Major CS Courses Completed</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.5rem;">
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE1030</span><br>Programming Fundamentals I · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE1040</span><br>Intermediate Programming · B
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE2610</span><br>Assembly Language · C
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE3444</span><br>Software Engineering · C
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE3S03</span><br>Algorithms &amp; Data Structures · B
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE3550</span><br>Foundations of Cybersecurity · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE3600</span><br>Systems Programming · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE4010</span><br>Social Issues in Computing · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE4115</span><br>Theoretical Concepts CSE · C
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE4210</span><br>Game Programming I · C
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE4430</span><br>Programming Languages · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE4901/02</span><br>Software Dev Capstone I &amp; II · A/B
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">CSCE3214</span><br>Software Dev for AI · A
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">MATH1710/1720</span><br>Calculus I (A) &amp; II (B)
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">MATH2000</span><br>Discrete Mathematics · C
-      </div>
-      <div style="background:rgba(52,199,123,.06);border:1px solid rgba(52,199,123,.2);border-radius:7px;padding:.5rem .75rem;font-size:.75rem;">
-        <span style="font-family:'Barlow Condensed',sans-serif;color:var(--safe);font-weight:700;">MATH3S02</span><br>Linear Algebra · B
-      </div>
-    </div>
+    <div class="sec-title">Completed CS Courses <span style="color:var(--muted);font-size:.65rem;margin-left:.5rem;">Click any course for AI explanation</span></div>
+    <div class="courses-grid" id="completedCourses"></div>
+  </div>
+
+  <!-- IN PROGRESS -->
+  <div class="section" style="background:var(--card);">
+    <div class="sec-title">Currently In Progress — Spring 2026</div>
+    <div class="courses-grid" id="ipCourses"></div>
   </div>
 
   <!-- TIMELINE -->
   <div class="timeline">
     <div class="tl-label">Academic Journey</div>
-    <div class="tl-pills">
-      <div class="pill done-yr">2021–22</div>
-      <div class="pill done-yr">2022–23</div>
-      <div class="pill done-yr">2023–24</div>
-      <div class="pill done-yr">2024–25</div>
-      <div class="pill active-yr">2025–26 ⚡</div>
-      <div class="pill target-yr">Dec 2026 🎓</div>
-    </div>
+    <div class="tl-pills" id="timelinePills"></div>
     <div class="grad-badge">🎓 Expected Dec 2026</div>
   </div>
 
-  <!-- AI ASSISTANT -->
+  <!-- AI SECTION -->
   <div class="ai-section">
     <div class="ai-header">
       <div class="ai-icon">🤖</div>
       <div>
-        <div class="ai-title">Degree AI Assistant</div>
-        <div class="ai-sub">Ask anything about your remaining courses, prerequisites, or next steps</div>
+        <div class="ai-title">AI Degree Advisor</div>
+        <div class="ai-sub">Powered by Claude AI · Knows your full audit + UNT course catalog · Web search enabled</div>
       </div>
     </div>
-
     <div class="quick-btns">
-      <button class="qbtn" onclick="askQuick('What courses do I still need to complete?')">What's left to finish?</button>
-      <button class="qbtn" onclick="askQuick('What are the prerequisites for CSCE4110 Algorithms?')">Prerequisites for Algorithms?</button>
-      <button class="qbtn" onclick="askQuick('Am I on track to graduate in December 2026?')">Am I on track to graduate?</button>
-      <button class="qbtn" onclick="askQuick('What CS electives can I still take?')">What electives can I take?</button>
-      <button class="qbtn" onclick="askQuick('Explain my GPA situation and how to improve it')">GPA explanation</button>
+      <button class="qbtn" onclick="quickAsk('What courses do I still need to complete my degree?')">📋 What's left?</button>
+      <button class="qbtn" onclick="quickAsk('What courses should I take next semester to graduate by December 2026?')">📅 Next semester plan</button>
+      <button class="qbtn" onclick="AI_ENGINE.checkGraduation().then(r => addAIMessage(r))">🎓 Am I on track?</button>
+      <button class="qbtn" onclick="AI_ENGINE.getRecommendations().then(r => addAIMessage(r))">⭐ Best courses to take</button>
+      <button class="qbtn" onclick="AI_ENGINE.analyzeGPA().then(r => addAIMessage(r))">📈 GPA analysis</button>
+      <button class="qbtn" onclick="quickAsk('Explain all my transfer credits and how they mapped to UNT requirements')">🔄 Transfer credits explained</button>
     </div>
-
     <div class="chat-box" id="chatBox">
       <div class="msg">
-        <div class="msg-avatar ai">AI</div>
+        <div class="msg-av ai">AI</div>
         <div class="msg-bubble">
-          Hey Aashish! 👋 I've read your full degree audit. You're <strong>almost done</strong> — 119 credits earned, 15 in progress this semester. Your current 5 courses (Algorithms, Internet Programming, Intro to AI, Data Mining, Logic Design) should complete your remaining requirements.<br><br>
-          Ask me anything about your courses, prerequisites, or graduation plan!
+          Hey Aashish! 👋 I've loaded your complete degree audit and the full UNT CS course catalog.<br><br>
+          You're <strong>99% done</strong> — 119 credits earned, 15 in progress this semester. Your 5 current courses should complete everything.<br><br>
+          Click any completed course card above for a full AI explanation, or ask me anything below! 🎓
         </div>
       </div>
     </div>
-
     <div class="ai-input-row">
-      <input class="ai-input" id="aiInput" type="text" placeholder="e.g. What are the prerequisites for CSCE4380?" onkeydown="if(event.key==='Enter')sendMsg()"/>
-      <button class="ai-send" id="aiSend" onclick="sendMsg()">Ask →</button>
+      <input class="ai-input" id="aiInput" type="text" placeholder="Ask anything — courses, prerequisites, graduation plan, GPA..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+      <button class="ai-send" id="aiSend" onclick="sendMessage()">Ask AI →</button>
     </div>
   </div>
 
 </div>
 
+<!-- COURSE DETAIL MODAL -->
+<div class="modal-overlay" id="courseModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Course Details</h3>
+      <button class="modal-close" onclick="document.getElementById('courseModal').classList.remove('show')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-ai-response" id="modalContent">
+        <div class="typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-const AUDIT_CONTEXT = `
-You are an academic advisor AI for Aashish Thapa Magar at the University of North Texas (UNT Denton).
-Here is his complete degree audit data:
+// ── RENDER PAGE FROM DATA ──────────────────────────
+function renderPage() {
+  const s = MY_AUDIT.student;
 
-STUDENT: Aashish Thapa Magar
-DEGREE: Bachelor of Science in Computer Science, College of Engineering
-PROGRAM: ENBS CSCI | Catalog Year: Fall 2025 | Valid through August 2033
-UNT GPA: 3.666 (27 UNT attempted hours, 99 points)
-OVERALL GPA: 3.262 (122 total attempted hours including transfer, 398 points)
-STATUS: All requirements satisfied using in-progress courses
+  // Subtitle
+  document.getElementById('pageSubtitle').textContent =
+    `${s.degree} · ${s.college} · Catalog Year ${s.catalogYear}`;
 
-CREDITS SUMMARY:
-- Total required: 120 semester hours
-- Earned (completed): 119 hours
-- In Progress (IP) this semester: 15 hours
-- Total if IP complete: 134 hours (exceeds 120 requirement)
+  // Meta
+  document.getElementById('studentMeta').innerHTML =
+    `<span>🎓 ${s.degree}</span>
+     <span>🏫 UNT Denton · ${s.program}</span>
+     <span>🆔 ${s.id}</span>
+     <span>📅 Expected ${s.expectedGraduation}</span>`;
 
-COURSES IN PROGRESS (Spring 2026):
-1. CSCE3420 - Internet Programming (3 cr, EN)
-2. CSCE4110 - Algorithms (3 cr, EN)
-3. CSCE4201 - Intro to Artificial Intelligence (3 cr, EN)
-4. CSCE4380 - Data Mining (3 cr, EN, substitutes for "Discovering CS" / RS-CSCE adv sub)
-5. EENG2710 - Logic Design (3 cr, EN) — Required digital logic course
+  // GPA
+  document.getElementById('untGPA').textContent = s.untGPA;
 
-COMPLETED REQUIREMENTS:
-✓ Communication (English Comp & Rhetoric): ENGL1310 (A), ENGL1320 (A) — 6/6 hrs
-✓ Mathematics Core: MATH1710 Calculus I (A, 4hr, DC:MATH2413) — 4/3 hrs
-✓ Life & Physical Sciences: PHYS1710 (A), PHYS2220 (C) — 6/6 hrs
-✓ Creative Arts: THEA1340 Theater Appreciation (A, DC:DRAM1310) — 3/3 hrs
-✓ Language, Philosophy & Culture: PHIL1050 Intro to Philosophy (B) — 3/3 hrs
-✓ American History: HIST2610 (A, DC:HIST1301), HIST2620 (A, DC:HIST1302) — 6/6 hrs
-✓ Government/Political Science: PSCI2305 Federal Govt (B), PSCI2306 Texas Govt (A) — 6/6 hrs
-✓ Social & Behavioral Science: ECON1110 Macroeconomics (B) — 3/3 hrs
-✓ Core Option Courses: ART 2T06 Fine Arts Visual (B), COMM1010 Oral Communication (B) — 6/6 hrs
-✓ CS Required Math: MATH1710 Calc I (A,4hr), MATH1720 Calc II (B,4hr), ENGR3T10 Engineering Probability (B,3hr, UT-ARLNG:IE3301), MATH3S02 Linear Algebra (B,3hr, UT-ARLNG:MATH3330) — 14/14 hrs
-✓ CS Required Lab Science: PHYS1710+1730 Physics I+Lab (A), PHYS2220+2240 Physics II+Lab (C) — 8/8 hrs
-✓ Technical Writing: TECM2700 (A, 3hr, DC:ENGL2311), TECM4180 ADV TECH COMM (A, 3hr) — 6/6 hrs
-✓ Digital Logic (EENG2710): IN PROGRESS
-✓ CS Major 58 Hours — 16 sub-requirements:
-  1. Discovering CS: CSCE4380 Data Mining (IP sub) — RS-CSCE adv sub per CSE dept
-  2. Computing Tools Lab (CSCE1015 sub): CSCE1T08 Intro to Comp Sci & Engr (A,1hr) — RM elective sub
-  3. Computer Science I: CSCE1030 Programming Fundamentals I (A,4hr, DC:COSC1436)
-  4. Computer Science II: CSCE1040 Intermediate Programming (B,3hr, UT-ARLNG:CSE1320)
-  5. Foundations of Computing: MATH2000 Discrete Mathematics (C,3hr, DC:MATH2305)
-  6. Data Structures: CSCE3S03 Algorithms & Data Structures (B,3hr, UT-ARLNG:CSE3318)
-  7. Assembly Language: CSCE2610 Cmptr Org & Assemb Lang Prog (C,3hr, UT-ARLNG:CSE2312)
-  8. Software Engineering: CSCE3444 Fundamentals of Software Engr (C,3hr, UT-ARLNG:CSE3310)
-  9. Cybersecurity: CSCE3550 Foundations Cybersecurity (A,3hr)
-  10. Systems Programming: CSCE3600 Systems Prog (A,3hr)
-  11. Social Issues in Computing: CSCE4010 (A,3hr)
-  12. Algorithms: CSCE4110 (IP,3hr,EN)
-  13. Capstone I & II: CSCE4901 (A,3hr), CSCE4902 (B,3hr) — 6hr DONE
-  14. CSCE Core: CSCE4115 Theoretical Concepts CSE (C,3hr, UT-ARLNG:CSE3315) + CSCE4430 Programming Languages (A,3hr) — 6hr
-  15. Breadth: CSCE4210 Game Prog I (C,3hr) + CSCE4201 Intro to AI (IP,3hr) — 3hr done + 3hr IP
-  16. Advanced CSCE Electives: CSCE3214 Software Dev for AI (A,3hr) + CSCE3420 Internet Programming (IP,3hr,EN) — 3hr done + 3hr IP
-✓ Major Residency: CSCE3550, CSCE3600, CSCE4210, CSCE4901 — 12/12 hrs at UNT
-✓ Electives: ALL COMPLETED
-✓ Advanced Hours (42 min): 42.0 hours added + 12.0 IP
-✓ UNT Residency Advanced Hours (24 min): 27.0 hours + 12.0 IP
+  // Progress bar
+  const earnedPct = (s.totalEarned / (s.totalEarned + s.inProgress)) * (s.totalEarned / s.required) * 100;
+  const ipPct = (s.inProgress / s.required) * 100;
+  document.getElementById('progressFraction').innerHTML =
+    `${s.totalEarned} earned + <span style="color:var(--ip)">${s.inProgress} IP</span> <em style="color:var(--muted);font-size:.85rem">/ ${s.required} required</em>`;
+  document.getElementById('fillEarned').style.width = Math.min(earnedPct, 88) + '%';
+  document.getElementById('fillIP').style.width = Math.min(ipPct, 12) + '%';
+  document.getElementById('legEarned').textContent = s.totalEarned + ' cr';
+  document.getElementById('legIP').textContent = s.inProgress + ' cr';
+  document.getElementById('legRequired').textContent = s.required + ' cr';
 
-ACADEMIC YEAR HISTORY:
-- 2021-2022: 15 hrs, 5 courses, 2.833 GPA (transfer year, community college)
-- 2022-2023: 27 hrs, 9 courses, 3.888 GPA
-- 2023-2024: 24 hrs, 9 courses, 3.125 GPA
-- 2024-2025: 26 hrs, 10 courses, 2.615 GPA
-- 2025-2026: 27 hrs, 9 courses, 3.666 GPA (current, includes 15hr IP)
+  // Stat grid
+  const stats = [
+    { val: s.required, label: 'Credits Required', cls: '' },
+    { val: s.totalEarned, label: 'Credits Earned', cls: 'g', sub: 'Completed' },
+    { val: s.inProgress, label: 'In Progress', cls: 'ip', sub: 'This semester' },
+    { val: s.untGPA, label: 'UNT GPA', cls: 'gold', sub: 'Good Standing' },
+    { val: s.completionPercent + '%', label: 'Complete', cls: 'g', sub: 'On track' },
+  ];
+  document.getElementById('statGrid').innerHTML = stats.map(st => `
+    <div class="stat">
+      <div class="sv ${st.cls}">${st.val}</div>
+      <div class="sk">${st.label}</div>
+      ${st.sub ? `<div class="ss">${st.sub}</div>` : ''}
+    </div>
+  `).join('');
 
-NOTES FOR ADVISING:
-- CSCE1040 was repeated; last attempt (RC=repeat credit) counts. First attempt is duplicate.
-- Transfer credits matched from: Dallas College (DC), UT-Arlington (UT-ARLNG), Arkansas State (AR ST U)
-- TRAN0T01 (Enhanced College Reading) and TRAN0T02 (Developmental Math) do NOT count toward degree
-- MUMH2T07 Fine Arts Music received 0.0 credit (F grade — no credit)
-- Math2730 Calculus III was taken but is in electives (not required for CS)
-- Advising process is NOT YET COMPLETE — audit is not official until advisor evaluates it
+  // Requirements
+  document.getElementById('requirementsList').innerHTML =
+    MY_AUDIT.requirements.map(r => `
+      <div class="req">
+        <div class="req-icon ${r.status === 'done' ? 'ri-done' : 'ri-ip'}">
+          ${r.status === 'done' ? '✓' : '⏳'}
+        </div>
+        <div class="req-name">${r.name}</div>
+        <div class="req-cr ${r.status}">${r.earned}/${r.required}</div>
+      </div>
+    `).join('');
 
-PREREQUISITES (UNT CS major common ones):
-- CSCE3S03 (Data Structures): CSCE1040 + MATH2000
-- CSCE3444 (Software Engr): CSCE1040
-- CSCE3550 (Cybersecurity): CSCE3S03 or concurrent
-- CSCE3600 (Systems Prog): CSCE2610 + CSCE3S03
-- CSCE4010 (Social Issues): senior standing (90+ hrs)
-- CSCE4110 (Algorithms): CSCE3S03 + MATH1710
-- CSCE4115 (Theoretical Concepts): CSCE3S03 + MATH2000
-- CSCE4201 (Intro AI): CSCE3S03 or instructor permission
-- CSCE4380 (Data Mining): CSCE3S03 + statistics/probability
-- CSCE4430 (Programming Languages): CSCE3S03
-- EENG2710 (Logic Design): MATH1710 or concurrent
+  // Transfer
+  document.getElementById('transferList').innerHTML =
+    MY_AUDIT.transferSources.map(t => `
+      <div class="xfer-row">
+        <div>
+          <div class="xfer-school">${t.school}</div>
+        </div>
+        <div class="xfer-cr">${t.credits} cr</div>
+      </div>
+    `).join('') + `
+    <div style="margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;">
+      <span style="font-size:.75rem;color:var(--muted);">Total attempted (incl. transfer)</span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--gold);">${s.totalAttemptedHours} cr</span>
+    </div>`;
 
-Answer questions helpfully, specifically referencing Aashish's actual courses and data above. Be concise but thorough. Format nicely with bullet points when listing things.
-`;
+  // GPA Chart
+  const maxGPA = 4.0;
+  document.getElementById('gpaChart').innerHTML =
+    MY_AUDIT.academicHistory.map(y => {
+      const h = (y.gpa / maxGPA) * 70;
+      const color = y.gpa >= 3.5 ? 'var(--safe)' : y.gpa >= 3.0 ? 'var(--gold)' : 'var(--danger)';
+      return `
+        <div class="gpa-bar-wrap">
+          <div class="gpa-bar-val">${y.gpa}</div>
+          <div class="gpa-bar" style="height:${h}px;background:${color}"></div>
+          <div class="gpa-bar-label">${y.year.replace('-20','-')}</div>
+        </div>`;
+    }).join('');
 
+  // Completed CS courses
+  const csCourses = MY_AUDIT.completedCourses.filter(c => c.category === 'cs');
+  document.getElementById('completedCourses').innerHTML =
+    csCourses.map(c => `
+      <div class="course-card" onclick="openCourseModal('${c.code}','${c.name}')">
+        <div class="cc-code">${c.code}</div>
+        <div class="cc-name">${c.name}</div>
+        <div class="cc-meta"><span>${c.credits} cr</span><span>Grade: ${c.grade}</span></div>
+      </div>
+    `).join('');
+
+  // In progress courses
+  document.getElementById('ipCourses').innerHTML =
+    MY_AUDIT.inProgressCourses.map(c => `
+      <div class="course-card ip-card" onclick="openCourseModal('${c.code}','${c.name}')">
+        <div class="cc-code">${c.code}</div>
+        <div class="cc-name">${c.name}</div>
+        <div class="cc-meta"><span>${c.credits} cr</span><span style="color:var(--ip)">In Progress</span></div>
+      </div>
+    `).join('');
+
+  // Timeline
+  const years = ['2021-22','2022-23','2023-24','2024-25'];
+  document.getElementById('timelinePills').innerHTML =
+    years.map(y => `<div class="pill done-yr">${y}</div>`).join('') +
+    `<div class="pill active-yr">2025-26 ⚡</div>` +
+    `<div class="pill target-yr">Dec 2026 🎓</div>`;
+}
+
+// ── CHAT ──────────────────────────────────────────
 const chatBox = document.getElementById('chatBox');
-const aiInput = document.getElementById('aiInput');
-const aiSend = document.getElementById('aiSend');
-let history = [];
 
-function addMsg(role, text, isHtml=false) {
-  const msg = document.createElement('div');
-  msg.className = 'msg';
-  const av = document.createElement('div');
-  av.className = 'msg-avatar ' + role;
-  av.textContent = role === 'user' ? 'AT' : 'AI';
-  const bubble = document.createElement('div');
-  bubble.className = 'msg-bubble';
-  if (isHtml) bubble.innerHTML = text;
-  else bubble.textContent = text;
-  msg.appendChild(av);
-  msg.appendChild(bubble);
-  chatBox.appendChild(msg);
-  chatBox.scrollTop = chatBox.scrollHeight;
-  return bubble;
-}
-
-function showTyping() {
-  const msg = document.createElement('div');
-  msg.className = 'msg';
-  msg.id = 'typingMsg';
-  msg.innerHTML = '<div class="msg-avatar ai">AI</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>';
-  chatBox.appendChild(msg);
+function addUserMessage(text) {
+  const el = document.createElement('div');
+  el.className = 'msg';
+  el.innerHTML = `<div class="msg-av user">AT</div><div class="msg-bubble">${text}</div>`;
+  chatBox.appendChild(el);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-function removeTyping() {
-  const t = document.getElementById('typingMsg');
+function addAIMessage(text) {
+  removeTypingIndicator();
+  const el = document.createElement('div');
+  el.className = 'msg';
+  el.innerHTML = `<div class="msg-av ai">AI</div><div class="msg-bubble">${formatText(text)}</div>`;
+  chatBox.appendChild(el);
+  chatBox.scrollTop = chatBox.scrollHeight;
+  document.getElementById('aiSend').disabled = false;
+}
+
+function showTypingIndicator() {
+  const el = document.createElement('div');
+  el.className = 'msg'; el.id = 'typingIndicator';
+  el.innerHTML = `<div class="msg-av ai">AI</div><div class="msg-bubble"><span class="typing"><span></span><span></span><span></span></span></div>`;
+  chatBox.appendChild(el);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function removeTypingIndicator() {
+  const t = document.getElementById('typingIndicator');
   if (t) t.remove();
 }
 
-function formatResponse(text) {
+function formatText(text) {
   return text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^- (.+)$/gm, '• $1')
+    .replace(/^## (.*$)/gm, '<strong style="color:var(--gold);display:block;margin:.5rem 0 .2rem">$1</strong>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
     .replace(/\n/g, '<br>');
 }
 
-async function sendMsg(customText) {
-  const text = customText || aiInput.value.trim();
+async function sendMessage() {
+  const input = document.getElementById('aiInput');
+  const text = input.value.trim();
   if (!text) return;
-  aiInput.value = '';
-  aiSend.disabled = true;
-
-  addMsg('user', text);
-  history.push({ role: 'user', content: text });
-  showTyping();
-
+  input.value = '';
+  document.getElementById('aiSend').disabled = true;
+  addUserMessage(text);
+  showTypingIndicator();
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 1000,
-        system: AUDIT_CONTEXT,
-        messages: history
-      })
-    });
-    const data = await res.json();
-    const reply = data.content?.map(c => c.text || '').join('') || 'Sorry, I had trouble responding.';
-    removeTyping();
-    const bubble = addMsg('ai', '', true);
-    bubble.innerHTML = formatResponse(reply);
-    history.push({ role: 'assistant', content: reply });
+    const reply = await AI_ENGINE.ask(text);
+    addAIMessage(reply);
   } catch(e) {
-    removeTyping();
-    addMsg('ai', 'Connection error. Please try again.', false);
+    addAIMessage('Connection error. Please try again.');
   }
-  aiSend.disabled = false;
-  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-function askQuick(q) {
-  aiInput.value = q;
-  sendMsg(q);
+function quickAsk(text) {
+  document.getElementById('aiInput').value = text;
+  sendMessage();
 }
+
+// ── COURSE MODAL ──────────────────────────────────
+async function openCourseModal(code, name) {
+  document.getElementById('modalTitle').textContent = `${code} — ${name}`;
+  document.getElementById('modalContent').innerHTML =
+    `<div class="typing"><span></span><span></span><span></span></div> Loading AI explanation...`;
+  document.getElementById('courseModal').classList.add('show');
+  try {
+    const reply = await AI_ENGINE.explainCourse(code);
+    document.getElementById('modalContent').innerHTML = formatText(reply);
+  } catch(e) {
+    document.getElementById('modalContent').innerHTML = 'Could not load explanation. Try again.';
+  }
+}
+
+// ── INIT ──────────────────────────────────────────
+renderPage();
 </script>
 </body>
 </html>
