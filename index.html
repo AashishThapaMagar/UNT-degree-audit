@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MyUNT Portal — Degree Audit Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Open Sans',sans-serif;background:#f0f0f0;min-height:100vh;}
+
+/* ── TOP NAV (matches UNT green bar) ── */
+.topnav{
+  background:#00853E;
+  display:flex;align-items:center;gap:1rem;
+  padding:.55rem 1.2rem;
+}
+.unt-logo{
+  display:flex;align-items:center;gap:.5rem;
+  color:#fff;font-weight:700;font-size:1rem;letter-spacing:.02em;
+  border-right:1px solid rgba(255,255,255,.3);padding-right:1rem;
+}
+.unt-logo .unt-big{font-size:1.4rem;font-weight:700;letter-spacing:.05em;}
+.unt-logo .unt-small{font-size:.6rem;line-height:1.2;font-weight:400;opacity:.9;}
+.nav-icons{display:flex;gap:.6rem;align-items:center;color:rgba(255,255,255,.85);font-size:1.1rem;padding:0 .6rem;}
+.nav-icons span{cursor:pointer;opacity:.85;}
+.nav-icons span:hover{opacity:1;}
+.menu-btn{background:rgba(0,0,0,.15);border:none;color:#fff;padding:.38rem .9rem;border-radius:4px;font-size:.85rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.3rem;}
+.search-bar{flex:1;max-width:520px;display:flex;align-items:center;background:#fff;border-radius:4px;overflow:hidden;}
+.search-bar input{flex:1;border:none;outline:none;padding:.38rem .75rem;font-size:.82rem;color:#333;}
+.search-bar button{background:#00853E;border:none;padding:.38rem .7rem;color:#fff;cursor:pointer;font-size:.9rem;}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:.7rem;}
+.nav-right span{color:rgba(255,255,255,.85);font-size:1.1rem;cursor:pointer;}
+.nav-avatar{width:30px;height:30px;border-radius:50%;background:#FFB81C;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#005C2B;cursor:pointer;}
+
+/* ── PAGE HEADER ── */
+.page-header{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  padding:.6rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.page-title-bar{display:flex;align-items:center;gap:.4rem;font-size:1.15rem;font-weight:700;color:#222;}
+.page-title-bar svg{width:18px;height:18px;color:#555;}
+.page-nav{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:#666;}
+.page-nav button{background:none;border:1px solid #ccc;border-radius:3px;padding:.2rem .45rem;cursor:pointer;font-size:.8rem;}
+.page-nav button:hover{background:#f5f5f5;}
+.more-btn{background:none;border:none;font-size:1.1rem;color:#666;cursor:pointer;padding:.2rem;}
+
+/* ── GRID ── */
+.portal-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  padding:1.2rem 1.5rem 2rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* ── TILE (base — matches existing UNT tiles) ── */
+.tile{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:1.2rem 1rem 1rem;
+  display:flex;flex-direction:column;align-items:center;
+  cursor:pointer;
+  transition:box-shadow .15s,transform .1s;
+  position:relative;
+  min-height:175px;
+  text-align:center;
+}
+.tile:hover{box-shadow:0 3px 14px rgba(0,0,0,.12);transform:translateY(-1px);}
+.tile-title{font-size:.88rem;font-weight:700;color:#222;margin-bottom:.75rem;width:100%;text-align:center;}
+.tile-icon{flex:1;display:flex;align-items:center;justify-content:center;margin-bottom:.6rem;}
+.tile-icon img,.tile-icon svg{width:72px;height:72px;}
+.tile-status{font-size:.8rem;color:#555;display:flex;align-items:center;gap:.3rem;}
+.tile-status .badge{color:#c0392b;font-weight:700;font-size:.9rem;}
+.tile-status .badge-green{color:#00853E;font-weight:700;font-size:.9rem;}
+.tile-status .badge-orange{color:#e67e22;font-weight:700;}
+
+/* ── NEW TILE: DEGREE AUDIT ── */
+.tile-audit{
+  background:#fff;
+  border:2.5px solid #00853E;
+  border-radius:6px;
+  padding:1.2rem 1rem 1rem;
+  display:flex;flex-direction:column;align-items:center;
+  cursor:pointer;
+  transition:box-shadow .15s,transform .1s;
+  position:relative;
+  min-height:175px;
+  text-align:center;
+}
+.tile-audit:hover{box-shadow:0 4px 18px rgba(0,133,62,.22);transform:translateY(-2px);}
+.new-badge{
+  position:absolute;top:-1px;right:-1px;
+  background:#00853E;color:#fff;
+  font-size:.58rem;font-weight:700;letter-spacing:.08em;
+  padding:.2rem .45rem;border-radius:0 5px 0 5px;
+  text-transform:uppercase;
+}
+.audit-icon-wrap{
+  width:72px;height:72px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#e8f5ee,#c3e8d0);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:.55rem;
+  position:relative;
+}
+.audit-icon-wrap .percent{
+  font-family:'Open Sans',sans-serif;
+  font-size:1.35rem;font-weight:700;color:#00853E;line-height:1;
+}
+.audit-icon-wrap .pct-label{font-size:.5rem;color:#4a8a5e;letter-spacing:.05em;}
+/* circular progress ring */
+.ring-wrap{position:relative;width:72px;height:72px;flex-shrink:0;}
+.ring-wrap svg{transform:rotate(-90deg);}
+.ring-bg{fill:none;stroke:#e0ede6;stroke-width:5;}
+.ring-fill{fill:none;stroke:#00853E;stroke-width:5;stroke-linecap:round;stroke-dasharray:188;stroke-dashoffset:2;}/* ~99% */
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ring-pct{font-size:1.2rem;font-weight:700;color:#00853E;line-height:1;}
+.ring-lbl{font-size:.45rem;color:#4a8a5e;letter-spacing:.05em;text-transform:uppercase;margin-top:1px;}
+.audit-stat-row{display:flex;gap:.5rem;margin-top:.1rem;}
+.audit-stat{font-size:.68rem;color:#555;text-align:center;}
+.audit-stat strong{display:block;font-size:.85rem;color:#00853E;font-weight:700;}
+
+/* ── TOOLTIP OVERLAY ── */
+.tooltip-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:100;
+  background:rgba(0,0,0,.45);
+  align-items:center;justify-content:center;
+}
+.tooltip-overlay.show{display:flex;}
+.tooltip-box{
+  background:#fff;border-radius:10px;
+  max-width:480px;width:90%;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  overflow:hidden;
+}
+.tooltip-header{
+  background:#00853E;color:#fff;
+  padding:1rem 1.25rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.tooltip-header h3{font-size:1rem;font-weight:700;}
+.tooltip-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}
+.tooltip-body{padding:1.25rem;}
+.tooltip-body p{font-size:.85rem;color:#444;line-height:1.6;margin-bottom:.9rem;}
+.tooltip-features{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem;}
+.tooltip-features li{display:flex;align-items:flex-start;gap:.5rem;font-size:.82rem;color:#333;}
+.tooltip-features li::before{content:'✓';color:#00853E;font-weight:700;flex-shrink:0;margin-top:.05rem;}
+.tooltip-footer{display:flex;gap:.6rem;padding:0 1.25rem 1.25rem;}
+.btn-primary{background:#00853E;color:#fff;border:none;border-radius:5px;padding:.55rem 1.1rem;font-size:.82rem;font-weight:600;cursor:pointer;flex:1;}
+.btn-primary:hover{background:#006830;}
+.btn-secondary{background:#fff;color:#00853E;border:1.5px solid #00853E;border-radius:5px;padding:.55rem 1.1rem;font-size:.82rem;font-weight:600;cursor:pointer;flex:1;}
+.btn-secondary:hover{background:#f0faf4;}
+
+/* ── ANNOTATION ── */
+.annotation{
+  max-width:1100px;margin:0 auto;
+  padding:0 1.5rem 1.5rem;
+  display:flex;align-items:flex-start;gap:.75rem;
+  background:transparent;
+}
+.annotation-box{
+  background:#fffbe6;border:1.5px dashed #FFB81C;border-radius:8px;
+  padding:.9rem 1.1rem;font-size:.78rem;color:#5a4200;line-height:1.6;
+  flex:1;
+}
+.annotation-box strong{color:#00853E;}
+.annotation-label{
+  background:#FFB81C;color:#000;border-radius:4px;
+  padding:.3rem .6rem;font-size:.7rem;font-weight:700;
+  white-space:nowrap;margin-top:.2rem;letter-spacing:.04em;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topnav">
+  <div class="unt-logo">
+    <div>
+      <div class="unt-big">UNT</div>
+      <div class="unt-small">UNIVERSITY<br>OF NORTH TEXAS</div>
+    </div>
+  </div>
+  <div class="nav-icons">
+    <span>🕐</span><span>🤍</span><span>♿</span>
+  </div>
+  <button class="menu-btn">Menu ▾</button>
+  <div class="search-bar">
+    <input type="text" placeholder="Search in Menu"/>
+    <button>🔍</button>
+  </div>
+  <div class="nav-right">
+    <span>🏠</span><span>🔔</span><span>⋮</span>
+    <div class="nav-avatar">A</div>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-title-bar">
+    Student Homepage
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l5 5 5-5"/></svg>
+  </div>
+  <div class="page-nav">
+    <button>‹</button>
+    <span>1 of 2</span>
+    <button>›</button>
+    <button class="more-btn">⋮</button>
+  </div>
+</div>
+
+<!-- PORTAL GRID -->
+<div class="portal-grid">
+
+  <!-- Row 1 — existing tiles -->
+  <div class="tile">
+    <div class="tile-title">Tasks</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <polygon points="40,10 65,55 15,55" fill="#e67e22" opacity=".9"/>
+        <text x="40" y="50" text-anchor="middle" font-size="28" fill="#fff" font-weight="900">!</text>
+      </svg>
+    </div>
+    <div class="tile-status"><span class="badge">2</span> Holds</div>
+  </div>
+
+  <div class="tile">
+    <div class="tile-title">Admissions</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <rect x="10" y="35" width="60" height="38" rx="3" fill="#5b7fbd"/>
+        <rect x="20" y="20" width="40" height="20" rx="2" fill="#7a9ed4"/>
+        <rect x="30" y="50" width="20" height="23" rx="1" fill="#e8c84a"/>
+        <rect x="34" y="42" width="5" height="5" rx="1" fill="#fff" opacity=".7"/>
+        <rect x="41" y="42" width="5" height="5" rx="1" fill="#fff" opacity=".7"/>
+      </svg>
+    </div>
+    <div class="tile-status">No active application</div>
+  </div>
+
+  <div class="tile">
+    <div class="tile-title">Enrollment</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <rect x="15" y="18" width="35" height="44" rx="3" fill="#c8b8a0"/>
+        <rect x="20" y="10" width="35" height="44" rx="3" fill="#e0d0b8"/>
+        <circle cx="52" cy="52" r="16" fill="#e07050"/>
+        <circle cx="48" cy="48" r="5" fill="#f5c09a"/>
+        <circle cx="56" cy="48" r="5" fill="#4a7090"/>
+        <circle cx="52" cy="56" r="5" fill="#5aaa70"/>
+      </svg>
+    </div>
+    <div class="tile-status"><span class="badge-green">1</span> Active Appointment</div>
+  </div>
+
+  <div class="tile">
+    <div class="tile-title">Academic Records</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <rect x="10" y="20" width="50" height="48" rx="3" fill="#e8c84a" opacity=".8"/>
+        <rect x="18" y="28" width="34" height="4" rx="2" fill="#c8a828"/>
+        <rect x="18" y="36" width="28" height="4" rx="2" fill="#c8a828" opacity=".6"/>
+        <rect x="18" y="44" width="20" height="4" rx="2" fill="#c8a828" opacity=".4"/>
+        <rect x="5" y="15" width="50" height="48" rx="3" fill="#f0d860" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="tile-status" style="color:#aaa;font-size:.75rem;">Transcript, GPA</div>
+  </div>
+
+  <!-- Row 2 — existing tiles -->
+  <div class="tile">
+    <div class="tile-title">Financial Aid &amp; Scholarships</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <polygon points="40,12 56,28 56,60 24,60 24,28" fill="#1a5a8a"/>
+        <polygon points="24,28 40,12 56,28" fill="#2a7abf"/>
+        <circle cx="40" cy="46" r="12" fill="#e8c84a"/>
+        <text x="40" y="51" text-anchor="middle" font-size="16" fill="#1a5a8a" font-weight="700">$</text>
+        <rect x="52" y="54" width="16" height="16" rx="8" fill="#e8c84a"/>
+        <text x="60" y="65" text-anchor="middle" font-size="10" fill="#1a5a8a" font-weight="700">$</text>
+      </svg>
+    </div>
+    <div class="tile-status" style="color:#aaa;font-size:.75rem;">Aid, Awards</div>
+  </div>
+
+  <div class="tile">
+    <div class="tile-title">Student Account</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <rect x="15" y="30" width="50" height="35" rx="4" fill="#888"/>
+        <rect x="15" y="22" width="50" height="14" rx="4" fill="#aaa"/>
+        <circle cx="24" cy="56" r="6" fill="#e8c84a"/>
+        <circle cx="38" cy="56" r="6" fill="#e8c84a" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="tile-status"><span class="badge">⚠</span> Payment Due</div>
+  </div>
+
+  <div class="tile">
+    <div class="tile-title">Advising &amp; Orientation</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <circle cx="28" cy="28" r="12" fill="#e8c84a"/>
+        <circle cx="52" cy="28" r="12" fill="#5b7fbd"/>
+        <rect x="14" y="44" width="26" height="22" rx="4" fill="#b8a030"/>
+        <rect x="40" y="44" width="26" height="22" rx="4" fill="#3a6090"/>
+      </svg>
+    </div>
+    <div class="tile-status" style="color:#aaa;font-size:.75rem;">Appointments</div>
+  </div>
+
+  <!-- ✨ NEW: DEGREE AUDIT TILE ✨ -->
+  <div class="tile-audit" onclick="document.getElementById('auditOverlay').classList.add('show')">
+    <div class="new-badge">NEW</div>
+    <div class="tile-title" style="color:#00853E;">Degree Audit</div>
+    <div class="tile-icon">
+      <div class="ring-wrap">
+        <svg width="72" height="72" viewBox="0 0 72 72">
+          <circle class="ring-bg" cx="36" cy="36" r="30"/>
+          <circle class="ring-fill" cx="36" cy="36" r="30"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-pct">99%</div>
+          <div class="ring-lbl">Complete</div>
+        </div>
+      </div>
+    </div>
+    <div class="audit-stat-row">
+      <div class="audit-stat"><strong>119</strong>Earned</div>
+      <div class="audit-stat"><strong style="color:#2563eb">15</strong>In Prog</div>
+      <div class="audit-stat"><strong>120</strong>Required</div>
+    </div>
+  </div>
+
+  <!-- Profile tile (existing) -->
+  <div class="tile" style="margin-top:-1rem;grid-column:span 1;">
+    <div class="tile-title">Profile</div>
+    <div class="tile-icon">
+      <svg viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="32" r="18" fill="#888"/>
+        <circle cx="40" cy="30" r="12" fill="#aaa"/>
+        <rect x="12" y="54" width="56" height="20" rx="12" fill="#aaa"/>
+        <circle cx="58" cy="56" r="10" fill="#00853E"/>
+        <text x="58" y="61" text-anchor="middle" font-size="14" fill="#fff">✓</text>
+      </svg>
+    </div>
+    <div class="tile-status" style="color:#888;font-size:.75rem;">11922278</div>
+  </div>
+
+</div>
+
+<!-- ANNOTATION -->
+<div class="annotation">
+  <div class="annotation-label">💡 PROPOSAL</div>
+  <div class="annotation-box">
+    <strong>Proposed Addition:</strong> A "Degree Audit" tile added directly to the MyUNT Student Homepage — showing a live completion ring, credits earned, and in-progress hours at a glance. One click opens the full interactive audit card with an AI advisor. <strong>No new login. No digging through menus.</strong> Students see their graduation progress the moment they open the portal.
+  </div>
+</div>
+
+<!-- MODAL: What opens when you click the tile -->
+<div class="tooltip-overlay" id="auditOverlay" onclick="if(event.target===this)this.classList.remove('show')">
+  <div class="tooltip-box">
+    <div class="tooltip-header">
+      <h3>🎓 Degree Audit — Aashish Thapa Magar</h3>
+      <button class="tooltip-close" onclick="document.getElementById('auditOverlay').classList.remove('show')">✕</button>
+    </div>
+    <div class="tooltip-body">
+      <p>Your degree progress at a glance — like a player stat card for your academic journey.</p>
+      <ul class="tooltip-features">
+        <li>119 credits earned · 15 in progress · 120 required</li>
+        <li>All 19 requirement categories checked — you're 99% done</li>
+        <li>Transfer credits from Dallas College &amp; UT-Arlington mapped clearly</li>
+        <li>Current semester: Algorithms, Intro to AI, Data Mining, Internet Prog, Logic Design</li>
+        <li>AI Advisor — ask "what's left?" or "what are my prerequisites?" instantly</li>
+        <li>Expected graduation: <strong>December 2026</strong></li>
+      </ul>
+    </div>
+    <div class="tooltip-footer">
+      <button class="btn-primary" onclick="window.open('audit.html','_blank')">Open Full Audit Card →</button>
+      <button class="btn-secondary" onclick="document.getElementById('auditOverlay').classList.remove('show')">Close</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
