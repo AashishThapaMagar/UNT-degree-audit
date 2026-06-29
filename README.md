@@ -158,3 +158,7 @@ GitHub: [AashishThapaMagar](https://github.com/AashishThapaMagar)
 *Built with ❤️ by a UNT student, for UNT students.*
 
 *"Students shouldn't have to decode their own graduation status."*
+
+Disclaimer: This is an independent student concept proposal 
+and is not affiliated with or endorsed by the University of 
+North Texas. UNT branding is used for demonstration purposes only.
